@@ -14,6 +14,7 @@
   } else {
     die( 'Unable to load the "PHP Email Form" Library!');
   }
+// PHP_Email_Form
 
   $contact = new PHP_Email_Form;
   $contact->ajax = true;
@@ -24,14 +25,14 @@
   $contact->subject = $_POST['subject'];
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
+
   $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
+    'host' => 'smtp.gmail.com',
+    'username' => 'testingproject7171@gmail.com',
+    'password' => 'testingbtp',
     'port' => '587'
   );
-  */
+
 
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
