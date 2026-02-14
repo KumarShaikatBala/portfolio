@@ -180,12 +180,27 @@ a:hover {
 }
 
 @media (max-width: 991.98px) {
+  /* Ensure hamburger is visible and above the overlay so it stays clickable to close */
+  .nav-toggle {
+    display: flex !important;
+    position: relative;
+    z-index: 1002;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .nav-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
   .nav-menu {
     position: fixed;
     top: var(--header-h);
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 1001;
     flex-direction: column;
     align-items: stretch;
     padding: 1rem;
@@ -194,6 +209,7 @@ a:hover {
     border-top: 1px solid var(--color-border);
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -206,6 +222,7 @@ a:hover {
     min-height: 48px;
     display: flex;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

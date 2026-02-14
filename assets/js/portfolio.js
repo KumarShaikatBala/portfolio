@@ -43,6 +43,9 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navMenu.classList.contains('is-open')) closeMenu();
     });
+    window.addEventListener('resize', function () {
+      if (window.matchMedia('(min-width: 992px)').matches && navMenu.classList.contains('is-open')) closeMenu();
+    });
   }
 
   // Active nav link on scroll
